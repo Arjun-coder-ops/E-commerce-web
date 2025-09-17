@@ -1,12 +1,85 @@
-# React + Vite
+# FabrikFit - Ecommerce Frontend (React + Vite + Tailwind CSS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FabrikFit is a modern, responsive ecommerce frontend built with React, Vite, and Tailwind CSS. It showcases a fashion storefront with a hero section, product filtering UI, product grid with load-more behavior, collection highlights, and a slide-in shopping cart drawer.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Frontend**: React 19, React DOM 19
+- **Build Tool**: Vite 7
+- **Styling**: Tailwind CSS 4 (via `@tailwindcss/vite`)
+- **Icons**: `react-icons`
+- **Linting**: ESLint 9 with React Hooks and React Refresh plugins
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Responsive layout**: Mobile-first navigation with hamburger menu and dropdowns
+- **Hero section**: Large banner with call-to-action buttons
+- **Filter bar**: Select inputs for price, product type, brand, availability, color, and size (UI only)
+- **Product grid**: 12 demo products with sale badges, sold-out states, hover effects, and a manual "Load More" interaction
+- **Collections slider/cards**: Highlighted collection cards with images and CTA buttons
+- **Shopping cart drawer**: Slide-in cart panel with click-outside-to-close behavior (demo state)
+- **Footer**: Multi-column footer with collapsible sections on mobile and social/payment icons
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+- Node.js 18+ and npm
+
+### Installation
+```bash
+npm install
+```
+
+### Development
+Run the dev server with hot module replacement:
+```bash
+npm run dev
+```
+The app will start and Vite will print a local URL (typically `http://localhost:5173`).
+
+### Build
+Create a production build:
+```bash
+npm run build
+```
+Preview the built app locally:
+```bash
+npm run preview
+```
+
+## Project Structure
+```
+├─ index.html
+├─ package.json
+├─ vite.config.js
+├─ src/
+│  ├─ main.jsx            # React entry (StrictMode)
+│  ├─ App.jsx             # Page composition
+│  ├─ index.css           # Tailwind CSS entry (@import "tailwindcss")
+│  ├─ assets/             # Images (hero, collections, products)
+│  └─ components/
+│     ├─ Header.jsx       # Responsive header, menus, cart trigger
+│     ├─ Hero.jsx         # Hero banner
+│     ├─ FilterBar.jsx    # Filter selects (UI only)
+│     ├─ ProductGrid.jsx  # Demo products + Load More
+│     ├─ CollectionSlider.jsx # Collection highlight cards
+│     ├─ ShoppingCart.jsx # Slide-in drawer
+│     └─ Footer.jsx       # Footer with newsletter & icons
+```
+
+## Customization
+- Update images in `src/assets/` to match your brand.
+- Edit navigation items and dropdowns in `src/components/Header.jsx`.
+- Adjust demo product data in `src/components/ProductGrid.jsx`.
+- Tweak Tailwind classes across components for colors, spacing, and typography.
+
+## Notes
+- Filters and cart are UI demos only—no backend or stateful cart logic is implemented.
+- Tailwind CSS v4 is configured via the Vite plugin `@tailwindcss/vite`. No separate Tailwind config file is present.
+
+## Scripts
+- **dev**: start Vite dev server
+- **build**: production build
+- **preview**: preview production build
+- **lint**: run ESLint on the project
+
+## License
+This project is for educational/demo purposes. Add your preferred license if you plan to distribute.
